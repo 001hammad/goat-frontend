@@ -24,7 +24,7 @@ export default function GoatsPage() {
   }, []);
 
   const handleShare = async (goat: Goat) => {
-    const url = `https://goat-backend-production.up.railway.app/goat/${goat.id}`;
+    const url = `https://goat-frontend-indol.vercel.app/goat/${goat.id}`;
     const message = `Salam! Mujhe ye bakri pasand ayi hai:\n${goat.name} (${goat.age}) - Rs ${goat.price}`;
     
     if (navigator.share) {
