@@ -17,14 +17,14 @@ export default function GoatsPage() {
   const [goats, setGoats] = useState<Goat[]>([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/goats")
+    fetch("https://goat-backend-production.up.railway.app/goats")
       .then((res) => res.json())
       .then((data) => setGoats(data))
       .catch((err) => console.error("Error fetching goats:", err));
   }, []);
 
   const handleShare = async (goat: Goat) => {
-    const url = `http://localhost:3000/goat/${goat.id}`;
+    const url = `https://goat-backend-production.up.railway.app/goat/${goat.id}`;
     const message = `Salam! Mujhe ye bakri pasand ayi hai:\n${goat.name} (${goat.age}) - Rs ${goat.price}`;
     
     if (navigator.share) {

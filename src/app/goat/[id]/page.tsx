@@ -19,7 +19,7 @@ export default function GoatDetailPage() {
   useEffect(() => {
     const fetchGoat = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/goats`);
+        const res = await fetch(`https://goat-backend-production.up.railway.app/goats`);
         const goats: Goat[] = await res.json();
         const found = goats.find((g) => String(g.id) === id);
         if (!found) throw new Error("Goat not found");

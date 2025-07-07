@@ -15,7 +15,7 @@ export default function GoatListSection() {
   const [goats, setGoats] = useState<Goat[]>([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/goats")
+    fetch("https://goat-backend-production.up.railway.app/goats")
       .then((res) => res.json())
       .then((data) => setGoats(data))
       .catch((err) => console.error("Error fetching goats:", err));

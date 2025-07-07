@@ -35,7 +35,7 @@ export default function AdminManagePage() {
 
   const fetchGoats = async () => {
     try {
-      const res = await fetch("http://localhost:5000/goats");
+      const res = await fetch("https://goat-backend-production.up.railway.app/goats");
       const data = await res.json();
       setGoats(data);
     } catch (error) {
@@ -50,7 +50,7 @@ export default function AdminManagePage() {
   // 🗑️ Delete Goat
   const handleDelete = async (id: number) => {
     try {
-      const res = await fetch(`http://localhost:5000/goats/${id}`, {
+      const res = await fetch(`https://goat-backend-production.up.railway.app/goats/${id}`, {
         method: "DELETE",
       });
       if (res.ok) {
@@ -73,7 +73,7 @@ export default function AdminManagePage() {
 
   const handleEditSave = async (id: number) => {
     try {
-      const res = await fetch(`http://localhost:5000/goats/${id}`, {
+      const res = await fetch(`https://goat-backend-production.up.railway.app/goats/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -103,7 +103,7 @@ export default function AdminManagePage() {
     uploadData.append("video", videoFile);
 
     try {
-      const res = await fetch("http://localhost:5000/upload-goat", {
+      const res = await fetch("https://goat-backend-production.up.railway.app/upload-goat", {
         method: "POST",
         body: uploadData,
       });
