@@ -16,7 +16,7 @@ export default function ChatWidget() {
       {open && (
         <div className="fixed bottom-20  right-6 w-[300px] h-[400px] md:w-[350px] md:h-[400px] bg-white border-2 border-[#9C5518] shadow-xl rounded-xl z-50 overflow-hidden">
           <iframe
-            src="http://localhost:8000" // Change to actual deployment URL later
+            src="https://goat-agent-production.up.railway.app/" 
             className="w-full h-full"
             title="Akhtar Goat Farm Assistant"
           />
